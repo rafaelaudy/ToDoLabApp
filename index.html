@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html>
+
 <head>
     <title>The HTML5 Herald</title>
     <script src="bower_components/angular/angular.js"></script>
@@ -11,17 +12,44 @@
     <div ng-controller="ToDoController">
         <form class="form-inline">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Add a to do:">
+                <input type="text" ng-model="taskName" class="form-control" placeholder="Add a to do:">
             </div>
-            <button type="submit" class="btn btn-default">Add</button>
+            <button type="submit" ng-click="addTask(taskName)" class="btn btn-default">Add</button>
+
         </form>
+
+        <table class="table" ng-if="tasks.length > 0">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Is done?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in tasks">
+                    <td>{{task.name}}</td>
+                    <td>{{task.done}}</td>
+                    <td ng-if="!task.done"><span ng-click="changeTaskStatus(task)" class="glyphicon glyphicon-ok"></span></td>
+                    <td ng-if="task.done"><span ng-click="changeTaskStatus(task)" class="glyphicon glyphicon-remove"></span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <script>
         angular
             .module('AngularToDoApp', [])
             .controller('ToDoController', ['$scope', function ($scope) {
-                $scope.test = 'gg';
+                $scope.tasks = [];
+
+                $scope.addTask = function(taskName) {
+                    $scope.tasks.push({name: taskName, done: false});
+                };
+
+                $scope.changeTaskStatus = function(task) {
+                    task.done = !task.done;
+                };
             }]);
     </script>
 </body>
