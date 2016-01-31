@@ -14,7 +14,6 @@
 </head>
 
 <body ng-app="AngularToDoApp">
-
     <div class="container">
         <div class="starter-template">
             <h1>SUPER ORIGINAL Angular To Do app!</h1>
@@ -47,27 +46,9 @@
                     </table>
                 </div>
             </div>
-
-            <script>
-                angular
-            .module('AngularToDoApp', [])
-            .controller('ToDoController', ['$scope', function ($scope) {
-                $scope.tasks = [];
-
-                $scope.addTask = function(taskName) {
-                    $scope.tasks.push({name: taskName, done: false});
-                };
-
-                $scope.changeTaskStatus = function(task) {
-                    task.done = !task.done;
-                };
-            }]);
-            </script>
         </div>
-
     </div>
-
-
+    <script src="app/app.js"></script>
 </body>
 
 </html>
