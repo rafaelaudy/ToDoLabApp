@@ -1,45 +1,55 @@
 <!doctype html>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>The HTML5 Herald</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Angular To Do App!</title>
+
     <script src="bower_components/angular/angular.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body ng-app="AngularToDoApp">
-    <div ng-controller="ToDoController">
-        <form class="form-inline">
-            <div class="form-group">
-                <input type="text" ng-model="taskName" class="form-control" placeholder="Add a to do:">
+
+    <div class="container">
+        <div class="starter-template">
+            <h1>SUPER ORIGINAL Angular To Do app!</h1>
+            <div ng-controller="ToDoController">
+                <br>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="taskName" placeholder="Add a to do:">
+                    </div>
+                    <button type="submit" ng-click="addTask(taskName)" class="form-control btn btn-primary">Add</button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <table class="table" ng-if="tasks.length > 0">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="task in tasks">
+                                <td ng-if="!task.done">{{task.name}}</td>
+                                <td ng-if="task.done"><del>{{task.name}}</del></td>
+                                <td>
+                                    <span ng-click="changeTaskStatus(task)" class="text-primary glyphicon glyphicon-{{task.done ? 'remove' : 'ok'}}"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <button type="submit" ng-click="addTask(taskName)" class="btn btn-default">Add</button>
 
-        </form>
-
-        <table class="table" ng-if="tasks.length > 0">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="task in tasks">
-                    <td ng-if="!task.done">{{task.name}}</td>
-                    <td ng-if="task.done"><del>{{task.name}}</del></td>
-                    <td>
-                        <span ng-click="changeTaskStatus(task)"
-                            class="glyphicon glyphicon-{{task.done ? 'remove' : 'ok'}}"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <script>
-        angular
+            <script>
+                angular
             .module('AngularToDoApp', [])
             .controller('ToDoController', ['$scope', function ($scope) {
                 $scope.tasks = [];
@@ -52,7 +62,12 @@
                     task.done = !task.done;
                 };
             }]);
-    </script>
+            </script>
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>
