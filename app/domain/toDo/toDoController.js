@@ -1,18 +1,16 @@
 angular
     .module('AngularToDoApp')
-    .controller('ToDoController', ['$scope', function ($scope) {
-        $scope.tasks = [];
+    .controller('ToDoController', ['$scope', 'ToDoFactory', function ($scope, toDoFactory) {
+        $scope.addToDo = addToDo;
+        $scope.changeToDoStatus = changeToDoStatus;
 
-        $scope.addTask = addTask;
-        $scope.changeTaskStatus = changeTaskStatus;
+        $scope.toDos = toDoFactory.get();
 
-        addTask('Offer this guys a contract');
-
-        function addTask(taskName) {
-            $scope.tasks.push({ description: taskName, done: false });
+        function addToDo(toDoDescription) {
+            toDoFactory.add(toDoDescription);
         };
 
-        function changeTaskStatus(task) {
-            task.done = !task.done;
+        function changeToDoStatus(toDo) {
+            toDo.done = !toDo.done;
         };
     }]);
