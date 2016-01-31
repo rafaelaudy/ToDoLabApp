@@ -22,16 +22,17 @@
             <thead>
                 <tr>
                     <th>Task</th>
-                    <th>Is done?</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="task in tasks">
-                    <td>{{task.name}}</td>
-                    <td>{{task.done}}</td>
-                    <td ng-if="!task.done"><span ng-click="changeTaskStatus(task)" class="glyphicon glyphicon-ok"></span></td>
-                    <td ng-if="task.done"><span ng-click="changeTaskStatus(task)" class="glyphicon glyphicon-remove"></span></td>
+                    <td ng-if="!task.done">{{task.name}}</td>
+                    <td ng-if="task.done"><del>{{task.name}}</del></td>
+                    <td>
+                        <span ng-click="changeTaskStatus(task)"
+                            class="glyphicon glyphicon-{{task.done ? 'remove' : 'ok'}}"></span>
+                    </td>
                 </tr>
             </tbody>
         </table>
