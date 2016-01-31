@@ -1,6 +1,6 @@
 <form class="form-inline">
     <div class="form-group">
-        <input type="text" class="form-control" ng-model="taskName" placeholder="Add a task:">
+        <input type="text" class="form-control" ng-model="taskName" placeholder="Add a to-do:">
     </div>
     <button type="submit" ng-click="addTask(taskName)" class="form-control btn btn-primary">Add</button>
 </form>
@@ -9,7 +9,7 @@
     <table class="table" ng-if="tasks.length > 0">
         <thead>
             <tr>
-                <th>Task</th>
+                <th>My to-do list</th>
                 <th></th>
             </tr>
         </thead>

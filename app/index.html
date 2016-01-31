@@ -12,6 +12,7 @@
     <script src="vendors/angular/angular.min.js"></script>
     <script src="vendors/angular-route/angular-route.min.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/components/stickyFooter.css">
 </head>
 
 <body ng-app="AngularToDoApp">
@@ -20,11 +21,20 @@
             <div nav-bar> </div>
 
             <h1>SUPER ORIGINAL Angular to-do app!</h1>
+
             <br>
+
             <div ng-view>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">There were 919 to-dos already completed with this app.</p>
+        </div>
+    </footer>
+
     <script src="app.js"></script>
     <script src="domain/toDo/toDoController.js"></script>
     <script src="common/directives/navBar.js"></script>
