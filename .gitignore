@@ -1,5 +1,3 @@
-
 # Package Managers
 node_modules/
-bower_components/
-
+app/vendors/

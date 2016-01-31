@@ -2,6 +2,8 @@
   "name": "angulartodoapp",
   "version": "1.0.0",
   "devDependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.7",
+    "grunt": "^0.4.5",
+    "grunt-http-server": "^1.13.0"
   }
 }
