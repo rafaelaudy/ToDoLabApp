@@ -1,5 +1,5 @@
 angular
-    .module('AngularToDoApp')
+    .module('AngularToDoApp.domain')
     .controller('ToDoController', ['$scope', 'ToDoFactory', function ($scope, toDoFactory) {
         $scope.addToDo = addToDo;
         $scope.changeToDoStatus = changeToDoStatus;

@@ -1,7 +1,10 @@
 angular
     .module('AngularToDoApp.common')
-    .directive('tdFooter', [function () {
+    .directive('tdFooter', ['ToDoFactory', function (toDoFactory) {
         return {
-            templateUrl: 'common/directives/tdFooter.html'
+            templateUrl: 'common/directives/tdFooter.html',
+            link: function ($scope) {
+                $scope.toDosGloballyCompleted = toDoFactory.getNumberCompletedGlobally();
+            }
         }
     }]);

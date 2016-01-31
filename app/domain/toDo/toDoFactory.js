@@ -1,5 +1,5 @@
 angular
-    .module('AngularToDoApp')
+    .module('AngularToDoApp.domain')
     .factory('ToDoFactory', [function () {
         var toDos = [{ description: 'Offer this guys a contract', done: false }];
 

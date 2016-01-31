@@ -1,5 +1,5 @@
 angular
-    .module('AngularToDoApp', ['ngRoute', 'AngularToDoApp.common'])
+    .module('AngularToDoApp', ['ngRoute', 'AngularToDoApp.common', 'AngularToDoApp.domain'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/toDo', {
