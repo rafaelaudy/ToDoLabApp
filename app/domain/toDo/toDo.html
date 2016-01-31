@@ -1,6 +1,6 @@
 <form class="form-inline">
     <div class="form-group">
-        <input type="text" class="form-control" ng-model="taskName" placeholder="Add a to do:">
+        <input type="text" class="form-control" ng-model="taskName" placeholder="Add a task:">
     </div>
     <button type="submit" ng-click="addTask(taskName)" class="form-control btn btn-primary">Add</button>
 </form>
@@ -15,8 +15,8 @@
         </thead>
         <tbody>
             <tr ng-repeat="task in tasks">
-                <td ng-if="!task.done">{{task.name}}</td>
-                <td ng-if="task.done"><del>{{task.name}}</del></td>
+                <td ng-if="!task.done">{{task.description}}</td>
+                <td ng-if="task.done"><del>{{task.description}}</del></td>
                 <td>
                     <span ng-click="changeTaskStatus(task)" class="text-primary glyphicon glyphicon-{{task.done ? 'remove' : 'ok'}}"></span>
                 </td>

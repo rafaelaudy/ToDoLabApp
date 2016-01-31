@@ -3,11 +3,16 @@ angular
     .controller('ToDoController', ['$scope', function ($scope) {
         $scope.tasks = [];
 
-        $scope.addTask = function (taskName) {
-            $scope.tasks.push({ name: taskName, done: false });
+        $scope.addTask = addTask;
+        $scope.changeTaskStatus = changeTaskStatus;
+
+        addTask('Offer this guys a contract');
+
+        function addTask(taskName) {
+            $scope.tasks.push({ description: taskName, done: false });
         };
 
-        $scope.changeTaskStatus = function (task) {
+        function changeTaskStatus(task) {
             task.done = !task.done;
         };
     }]);
