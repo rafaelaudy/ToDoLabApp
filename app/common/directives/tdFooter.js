@@ -5,9 +5,9 @@
         .module('AngularToDoApp.common')
         .directive('tdFooter', tdFooter);
 
-    tdFooter.$inject = ['$timeout', 'toDoFactory'];
+    tdFooter.$inject = ['$timeout', 'toDoService'];
 
-    function tdFooter($timeout, toDoFactory) {
+    function tdFooter($timeout, toDoService) {
         return {
             templateUrl: 'common/directives/tdFooter.html',
             link: function ($scope) {
@@ -26,7 +26,7 @@
                 }
 
                 function updateToDosGloballyCompleted() {
-                    toDoFactory.getNumberCompletedGlobally()
+                    toDoService.getNumberCompletedGlobally()
                         .then(function (toDosGloballyCompleted) {
                             $scope.toDosGloballyCompleted = toDosGloballyCompleted.data;
                         })

@@ -5,9 +5,9 @@
         .module('AngularToDoApp.domain')
         .controller('ToDoController', ToDoController);
 
-    ToDoController.$inject = ['toDoFactory'];
+    ToDoController.$inject = ['toDoService'];
 
-    function ToDoController(toDoFactory) {
+    function ToDoController(toDoService) {
         var vm = this;
 
         vm.addToDo = addToDo;
@@ -18,13 +18,13 @@
         ////////////
 
         function activate () {
-            toDoFactory.get().then(function (toDos) {
+            toDoService.get().then(function (toDos) {
                 vm.toDos = toDos;
             });
         }
 
         function addToDo(toDoDescription) {
-            toDoFactory.add(toDoDescription);
+            toDoService.add(toDoDescription);
         };
 
         function changeToDoStatus(toDo) {
