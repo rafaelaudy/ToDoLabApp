@@ -3,9 +3,9 @@
 
     angular
         .module('AngularToDoApp.domain')
-        .factory('toDoFactory', ['$http', toDoFactory]);
+        .factory('toDoFactory', ['$http', '$q', toDoFactory]);
 
-    function toDoFactory($http) {
+    function toDoFactory($http, $q) {
         var toDos;
 
         activate();
@@ -26,7 +26,11 @@
             return toDos.push({ description: toDo, done: false });
         };
 
-        function get() { return toDos; };
+        function get() {
+            var deferred = $q.defer();
+            deferred.resolve(toDos);
+            return deferred.promise;
+        };
 
         function getNumberCompletedGlobally() {
             return $http.get('https://www.random.org/integers/?num=1&min=1000&max=99999&col=1&base=10&format=plain&rnd=new');

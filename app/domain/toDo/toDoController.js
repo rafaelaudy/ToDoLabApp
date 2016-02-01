@@ -16,7 +16,9 @@
         ////////////
 
         function activate () {
-            vm.toDos = toDoFactory.get();
+            toDoFactory.get().then(function (toDos) {
+                vm.toDos = toDos;
+            });
         }
 
         function addToDo(toDoDescription) {
