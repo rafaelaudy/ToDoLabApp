@@ -3,9 +3,11 @@
 
     angular
         .module('AngularToDoApp.common')
-        .directive('tdNavBar', [function () {
-            return {
-                templateUrl: 'common/directives/tdNavBar.html'
-            }
-        }]);
+        .directive('tdNavBar', [tdNavBar]);
+
+    function tdNavBar() {
+        return {
+            templateUrl: 'common/directives/tdNavBar.html'
+        }
+    }
 })();
