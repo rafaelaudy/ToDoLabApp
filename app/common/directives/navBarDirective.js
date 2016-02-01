@@ -7,7 +7,7 @@
 
     function tdNavBar() {
         return {
-            templateUrl: 'common/directives/tdNavBar.html'
+            templateUrl: 'common/directives/navBarDirective.html'
         }
     }
 })();

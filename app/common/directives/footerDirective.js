@@ -9,7 +9,7 @@
 
     function tdFooter($timeout, toDoService) {
         return {
-            templateUrl: 'common/directives/tdFooter.html',
+            templateUrl: 'common/directives/footerDirective.html',
             link: function ($scope) {
                 var updateToDosTimeout;
 
