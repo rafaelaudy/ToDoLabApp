@@ -18,7 +18,9 @@
                 <td ng-if="!toDo.done">{{toDo.description}}</td>
                 <td ng-if="toDo.done"><del>{{toDo.description}}</del></td>
                 <td>
-                    <span ng-click="vm.changeToDoStatus(toDo)" class="text-primary glyphicon glyphicon-{{toDo.done ? 'remove' : 'ok'}}"></span>
+                    <a ng-click="vm.changeToDoStatus(toDo)" href="">
+                        <i class="glyphicon glyphicon-{{toDo.done ? 'remove' : 'ok'}}"></i>
+                    </a>
                 </td>
             </tr>
         </tbody>
