@@ -3,7 +3,9 @@
 
     angular
         .module('AngularToDoApp.common')
-        .directive('tdFooter', ['$timeout', 'toDoFactory', tdFooter]);
+        .directive('tdFooter', tdFooter);
+
+    tdFooter.$inject = ['$timeout', 'toDoFactory'];
 
     function tdFooter($timeout, toDoFactory) {
         return {

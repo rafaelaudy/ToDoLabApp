@@ -3,7 +3,7 @@
 
     angular
         .module('AngularToDoApp.common')
-        .directive('tdNavBar', [tdNavBar]);
+        .directive('tdNavBar', tdNavBar);
 
     function tdNavBar() {
         return {

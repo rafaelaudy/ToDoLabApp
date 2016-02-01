@@ -3,7 +3,9 @@
 
     angular
         .module('AngularToDoApp.domain')
-        .factory('toDoFactory', ['$http', '$q', toDoFactory]);
+        .factory('toDoFactory', toDoFactory);
+
+    toDoFactory.$inject = ['$http', '$q'];
 
     function toDoFactory($http, $q) {
         var toDos;

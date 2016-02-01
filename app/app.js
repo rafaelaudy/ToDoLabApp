@@ -3,7 +3,9 @@
 
     angular
         .module('AngularToDoApp', ['ngRoute', 'AngularToDoApp.common', 'AngularToDoApp.domain'])
-        .config(['$routeProvider', config]);
+        .config(config);
+
+    config.$inject = ['$routeProvider'];
 
     function config($routeProvider) {
         $routeProvider

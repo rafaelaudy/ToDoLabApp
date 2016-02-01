@@ -3,7 +3,9 @@
 
     angular
         .module('AngularToDoApp.domain')
-        .controller('ToDoController', ['toDoFactory', ToDoController]);
+        .controller('ToDoController', ToDoController);
+
+    ToDoController.$inject = ['toDoFactory'];
 
     function ToDoController(toDoFactory) {
         var vm = this;
