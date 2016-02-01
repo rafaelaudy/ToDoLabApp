@@ -1,16 +1,21 @@
-angular
-    .module('AngularToDoApp.domain')
-    .controller('ToDoController', ['$scope', 'ToDoFactory', function ($scope, toDoFactory) {
-        $scope.addToDo = addToDo;
-        $scope.changeToDoStatus = changeToDoStatus;
+(function () {
+    'use strict';
 
-        $scope.toDos = toDoFactory.get();
+    angular
+        .module('AngularToDoApp.domain')
+        .controller('ToDoController', ['$scope', 'ToDoFactory', function ($scope, toDoFactory) {
+            $scope.addToDo = addToDo;
+            $scope.changeToDoStatus = changeToDoStatus;
 
-        function addToDo(toDoDescription) {
-            toDoFactory.add(toDoDescription);
-        };
+            $scope.toDos = toDoFactory.get();
 
-        function changeToDoStatus(toDo) {
-            toDo.done = !toDo.done;
-        };
-    }]);
+            function addToDo(toDoDescription) {
+                toDoFactory.add(toDoDescription);
+            };
+
+            function changeToDoStatus(toDo) {
+                toDo.done = !toDo.done;
+            };
+        }]);
+})();
+

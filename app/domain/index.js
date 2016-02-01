@@ -1,1 +1,6 @@
-angular.module('AngularToDoApp.domain', [])
+(function () {
+    'use strict';
+
+    angular.module('AngularToDoApp.domain', [])
+})();
+
