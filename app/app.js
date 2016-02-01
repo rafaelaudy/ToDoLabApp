@@ -9,7 +9,7 @@
         $routeProvider
             .when('/toDo', {
                 templateUrl: 'domain/toDo/toDo.html',
-                controller: 'ToDoController'
+                controller: 'ToDoController as vm'
             })
             .otherwise({
                 redirectTo: '/toDo'

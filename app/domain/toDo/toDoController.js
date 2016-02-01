@@ -3,13 +3,15 @@
 
     angular
         .module('AngularToDoApp.domain')
-        .controller('ToDoController', ['$scope', 'toDoFactory', ToDoController]);
+        .controller('ToDoController', ['toDoFactory', ToDoController]);
 
-    function ToDoController($scope, toDoFactory) {
-        $scope.addToDo = addToDo;
-        $scope.changeToDoStatus = changeToDoStatus;
+    function ToDoController(toDoFactory) {
+        var vm = this;
 
-        $scope.toDos = toDoFactory.get();
+        vm.addToDo = addToDo;
+        vm.changeToDoStatus = changeToDoStatus;
+
+        vm.toDos = toDoFactory.get();
 
         function addToDo(toDoDescription) {
             toDoFactory.add(toDoDescription);

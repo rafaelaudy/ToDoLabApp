@@ -1,12 +1,12 @@
 <form class="form-inline">
     <div class="form-group">
-        <input type="text" class="form-control" ng-model="toDoName" placeholder="Add a to-do:">
+        <input type="text" class="form-control" ng-model="vm.toDoName" placeholder="Add a to-do:">
     </div>
-    <button type="submit" ng-click="addToDo(toDoName)" class="form-control btn btn-primary">Add</button>
+    <button type="submit" ng-click="vm.addToDo(vm.toDoName)" class="form-control btn btn-primary">Add</button>
 </form>
 <br>
 <div class="form-group">
-    <table class="table" ng-if="toDos.length > 0">
+    <table class="table" ng-if="vm.toDos.length > 0">
         <thead>
             <tr>
                 <th>My to-do list</th>
@@ -14,11 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="toDo in toDos">
+            <tr ng-repeat="toDo in vm.toDos">
                 <td ng-if="!toDo.done">{{toDo.description}}</td>
                 <td ng-if="toDo.done"><del>{{toDo.description}}</del></td>
                 <td>
-                    <span ng-click="changeToDoStatus(toDo)" class="text-primary glyphicon glyphicon-{{toDo.done ? 'remove' : 'ok'}}"></span>
+                    <span ng-click="vm.changeToDoStatus(toDo)" class="text-primary glyphicon glyphicon-{{toDo.done ? 'remove' : 'ok'}}"></span>
                 </td>
             </tr>
         </tbody>
