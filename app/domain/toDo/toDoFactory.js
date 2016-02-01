@@ -6,21 +6,29 @@
         .factory('toDoFactory', ['$http', toDoFactory]);
 
     function toDoFactory($http) {
-        var toDos = [{ description: 'Offer this guys a contract', done: false }];
+        var toDos;
+
+        activate();
 
         return {
-            get: function () {
-                return toDos;
-            },
-
-            add: function (toDo) {
-                return toDos.push({ description: toDo, done: false });
-            },
-
-            getNumberCompletedGlobally: function () {
-                return $http.get('https://www.random.org/integers/?num=1&min=1000&max=99999&col=1&base=10&format=plain&rnd=new');
-            }
+            add: add,
+            get: get,
+            getNumberCompletedGlobally: getNumberCompletedGlobally
         }
+
+        function activate() {
+            toDos = [{ description: 'Offer this guys a contract', done: false }];
+        }
+
+        function add(toDo) {
+            return toDos.push({ description: toDo, done: false });
+        };
+
+        function get() { return toDos; };
+
+        function getNumberCompletedGlobally() {
+            return $http.get('https://www.random.org/integers/?num=1&min=1000&max=99999&col=1&base=10&format=plain&rnd=new');
+        };
     }
 })();
 

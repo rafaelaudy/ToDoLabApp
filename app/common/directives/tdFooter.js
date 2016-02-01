@@ -11,7 +11,15 @@
             link: function ($scope) {
                 var updateToDosTimeout;
 
-                updateToDosGloballyCompleted();
+                activate();
+
+                function activate () {
+                    updateToDosGloballyCompleted();
+
+                    $scope.$on('$destroy', function () {
+                        $timeout.cancel(updateToDosTimeout);
+                    });
+                }
 
                 function updateToDosGloballyCompleted() {
                     toDoFactory.getNumberCompletedGlobally().then(function (toDosGloballyCompleted) {
@@ -21,10 +29,6 @@
                         updateToDosTimeout = $timeout(updateToDosGloballyCompleted, 10000);
                     });
                 }
-
-                $scope.$on('$destroy', function () {
-                    $timeout.cancel(updateToDosTimeout);
-                });
             }
         }
     }

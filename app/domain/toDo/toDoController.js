@@ -11,7 +11,11 @@
         vm.addToDo = addToDo;
         vm.changeToDoStatus = changeToDoStatus;
 
-        vm.toDos = toDoFactory.get();
+        activate()
+
+        function activate () {
+            vm.toDos = toDoFactory.get();
+        }
 
         function addToDo(toDoDescription) {
             toDoFactory.add(toDoDescription);
