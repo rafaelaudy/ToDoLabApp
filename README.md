@@ -13,3 +13,10 @@ grunt
 ```
 
 PS: I am using grunt and bower. So you will need to have in your global NPM packages the grunt-cli and bower.
+
+## To add to the code
+- ControllerAs sintax
+- Unit tests with Karma
+- Functional tests with Protractor
+- Refactor using John Papa's style guide
+- Build a dist folder using Gulp

@@ -1,6 +1,6 @@
 angular
     .module('AngularToDoApp.domain')
-    .factory('ToDoFactory', [function () {
+    .factory('ToDoFactory', ['$http', function ($http) {
         var toDos = [{ description: 'Offer this guys a contract', done: false }];
 
         return {
@@ -13,7 +13,7 @@ angular
             },
 
             getNumberCompletedGlobally: function () {
-                return 99999;
+                return $http.get('https://www.random.org/integers/?num=1&min=1000&max=99999&col=1&base=10&format=plain&rnd=new');
             }
         }
     }]);
