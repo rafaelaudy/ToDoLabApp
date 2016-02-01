@@ -1,23 +1,26 @@
-# AngularToDoApp
+# To-do lab app
 
 Just a simple (and not original) app to play with technologies that I like.
-The idea is to create a simple app that I can rewrite in different technologies.
+The idea is to create a simple app that I can rewrite and enhance using different technologies.
 
-See? Super original :) But it is still fun!
+See? Super original :) But it is still super fun!
 
-To run the app just type:
-```
-npm install
-bower install
-grunt
-```
+# UI implementations:
+- AngularJS (done)
+- AngularJS 2 with typescript
+- AngularJS 2 with ES6
+- Ionic 2
+- React
 
-PS: I am using grunt and bower. So you will need to have in your global NPM packages the grunt-cli and bower.
+# Backend implementations:
+- ASP.NET Web API (in development)
+- Node.JS
+- Firebase
 
-#### This code is using John Papa's style guide, which I normally use on my projects.
-https://github.com/johnpapa/angular-styleguide
+# Other technologies:
+- MongoDB
+- Azure
+- AWS
+- Elastic Search
 
-#### Going to add later:
-- Unit tests with Karma
-- Functional tests with Protractor
-- Build a dist folder using Gulp
+There is another readme in each folder explaing how to run the projects
