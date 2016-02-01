@@ -22,12 +22,13 @@
                 }
 
                 function updateToDosGloballyCompleted() {
-                    toDoFactory.getNumberCompletedGlobally().then(function (toDosGloballyCompleted) {
-                        $scope.toDosGloballyCompleted = toDosGloballyCompleted.data;
-                        updateToDosTimeout = $timeout(updateToDosGloballyCompleted, 10000);
-                    }, function () {
-                        updateToDosTimeout = $timeout(updateToDosGloballyCompleted, 10000);
-                    });
+                    toDoFactory.getNumberCompletedGlobally()
+                        .then(function (toDosGloballyCompleted) {
+                            $scope.toDosGloballyCompleted = toDosGloballyCompleted.data;
+                        })
+                        .finally(function () {
+                            updateToDosTimeout = $timeout(updateToDosGloballyCompleted, 10000);
+                        });
                 }
             }
         }
