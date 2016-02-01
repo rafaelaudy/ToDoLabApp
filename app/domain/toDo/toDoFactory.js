@@ -16,6 +16,8 @@
             getNumberCompletedGlobally: getNumberCompletedGlobally
         }
 
+        ////////////
+
         function activate() {
             toDos = [{ description: 'Offer this guys a contract', done: false }];
         }

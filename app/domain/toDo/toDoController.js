@@ -13,6 +13,8 @@
 
         activate()
 
+        ////////////
+
         function activate () {
             vm.toDos = toDoFactory.get();
         }
