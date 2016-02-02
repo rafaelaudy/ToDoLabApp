@@ -4,7 +4,7 @@ Just a simple (and not original) app to play with technologies that I like.
 The idea is to create a simple app that I can rewrite and enhance using different technologies.
 
 The idea is to keep the code simple but following good practices.
-I may complicate things a little bit to test cool language features.
+I may complicate things a bit to test cool language features.
 
 See? Super original :) But it is still super fun!
 
@@ -26,4 +26,4 @@ See? Super original :) But it is still super fun!
 - AWS
 - Elastic Search
 
-There is another readme in each folder explaing how to run the projects
+There is another read me file in each folder explaining how to run the projects.
