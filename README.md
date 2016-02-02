@@ -16,8 +16,8 @@ See? Super original :) But it is still super fun!
 - React
 
 ## Backend implementations:
-- ASP.NET Web API (in development)
-- Node.JS
+- ASP.NET Web API
+- Node.JS (In development)
 - Firebase
 
 ## Other technologies:
