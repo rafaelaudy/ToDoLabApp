@@ -1,2 +1,5 @@
 # Package Managers
 node_modules/
+
+# Visual Studio Code
+.vscode/

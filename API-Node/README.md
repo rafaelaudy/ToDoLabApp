@@ -5,7 +5,6 @@ node .\bin\www.js
 ```
 
 ### Things to add (so I will not forget :p )
-- Debug library
 - Tests
 - Mongoose
 - Change start command
