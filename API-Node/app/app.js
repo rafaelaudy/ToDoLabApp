@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-var todoRoute = require('./routes/toDo');
+var toDoRoute = require('./routes/toDo');
 
-app.use('/todo', todoRoute);
+app.use('/todo', toDoRoute);
 
 module.exports = app;
