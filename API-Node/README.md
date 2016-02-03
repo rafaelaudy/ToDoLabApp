@@ -4,4 +4,11 @@ npm install
 node .\bin\www.js
 ```
 
-PS: I am using grunt. So you will need to have in your global NPM packages the grunt-cli.
+### Things to add (so I will not forget :p )
+- Debug library
+- Tests
+- Mongoose
+- Change start command
+- Error handling
+- Start multiple threads
+- Logs with Kibana

@@ -10,14 +10,16 @@ See? Super original :) But it is still super fun!
 
 ## UI implementations:
 - AngularJS (done)
-- AngularJS 2 with typescript
 - AngularJS 2 with ES6
+- AngularJS 2 with typescript
 - Ionic 2
 - React
 
 ## Backend implementations:
 - ASP.NET Web API
 - Node.JS (In development)
+- Node.JS with ES6
+- Node.JS with typescript
 - Firebase
 
 ## Other technologies:

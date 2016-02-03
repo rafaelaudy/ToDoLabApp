@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var toDos = [{ id: 1, description: 'Offer this guys a contract', done: false }];
 var id = 1;
 
@@ -10,8 +12,8 @@ module.exports = {
 
 function add (toDo) {
     id++;
-    toDos.push({ id: id, description: 'Offer this guys a contract', done: false });
-    console.log(toDo);
+    toDo.id = id;
+    toDos.push(toDo);
     return toDo;
 }
 
@@ -24,5 +26,10 @@ function getGlobalTotal () {
 }
 
 function update (toDo) {
-    return 'notImplemented'
+    var index = _.findIndex(toDos, {id: parseInt(toDo.id)})
+    if (index) {
+        toDos[index] = toDo;
+    }
+
+    return toDo;
 }
