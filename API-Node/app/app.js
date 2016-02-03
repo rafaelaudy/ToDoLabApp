@@ -1,12 +1,8 @@
 var express = require('express');
 var app = express();
 
-var router = express.Router();
+var todoRoute = require('./routes/toDo');
 
-router.get('/', function (req, res) {
-        res.json([{ description: 'Offer this guys a contract', done: false }]);
-    });
-
-app.use('/todo', router);
+app.use('/todo', todoRoute);
 
 module.exports = app;
