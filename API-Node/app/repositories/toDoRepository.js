@@ -27,7 +27,7 @@ function getGlobalTotal () {
 
 function update (toDo) {
     var index = _.findIndex(toDos, {id: parseInt(toDo.id)})
-    if (index) {
+    if (index >= 0) {
         toDos[index] = toDo;
     }
 
