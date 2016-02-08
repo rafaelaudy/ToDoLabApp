@@ -6,9 +6,10 @@
     "lodash": "^4.2.1"
   },
   "devDependencies": {
+    "mocha": "^2.4.5",
     "supertest": "^1.1.0"
   },
   "scripts": {
-      "test": "mocha tests/specs/**/*.js"
+    "test": "mocha tests/specs/**/*.js"
   }
 }
