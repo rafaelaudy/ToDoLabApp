@@ -13,12 +13,13 @@ module.exports = function (grunt) {
 
         exec: {
             webDriverUpdate: 'webdriver-manager update',
-            runFunctionalTests: 'protractor test/functional/protractor.conf.js'
+            runFunctionalTests: 'protractor test/functional/protractor.conf.js',
+            runUnitTests: './node_modules/karma/bin/karma start ./test/unit/karma.conf.js'
         }
     });
 
     grunt.registerTask('start', ['http-server:dev']);
-    grunt.registerTask('test', ['http-server:test', 'exec:webDriverUpdate', 'exec:runFunctionalTests']);
+    grunt.registerTask('test', ['exec:runUnitTests', 'http-server:test', 'exec:webDriverUpdate', 'exec:runFunctionalTests']);
 
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-exec');
