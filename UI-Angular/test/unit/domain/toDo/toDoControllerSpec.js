@@ -1,23 +1,11 @@
-describe('Given a to do API', function () {
-    describe('when adding', function () {
-        it('should save the to do', function () {
-        });
-   });
+describe('Given a to do controller', function () {
+    it('should load the to do list at the start', function () {
+    });
 
-   describe('when updating', function () {
-        it('should update the to do', function () {
-        });
+    it('should be able to add to dos', function () {
+    });
 
-        it('should return an 400 error if the id is not provided', function () {
-        });
-   });
-
-   describe('when querying', function () {
-        it('should return a list of to dos', function () {
-        });
-
-        it('should return the number of todos globally completed', function () {
-        });
+    it('should be able to change the status of the to dos', function () {
     });
 });
 
